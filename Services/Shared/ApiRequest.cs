@@ -26,7 +26,12 @@ namespace Wirex_POC.Services.Shared
 
         public async Task<T?> SendPostRequestAsync<T>(string tokenUrl, string jsonPayload, Dictionary<string, string>? headers = null)
         {
-            using var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
+            StringContent stringContent = null;
+
+            if (jsonPayload != null)
+            {
+                stringContent = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
+            }
 
             if(headers is not null)
             {
@@ -36,8 +41,7 @@ namespace Wirex_POC.Services.Shared
                 }
             }
 
-
-            var response = await _httpClient.PostAsync(tokenUrl, content);
+            var response = await _httpClient.PostAsync(tokenUrl, stringContent);
             string responseBody = await response.Content.ReadAsStringAsync();
             Console.WriteLine(responseBody);
             if (response.IsSuccessStatusCode && !string.IsNullOrEmpty(responseBody))

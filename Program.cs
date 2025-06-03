@@ -1,5 +1,6 @@
 
 using System.Threading.Tasks;
+using Wirex_POC.Services.KYC;
 using Wirex_POC.Services.Shared;
 using Wirex_POC.Services.User;
 
@@ -15,11 +16,14 @@ namespace Wirex_POC
             string? accessToken = await generateToken.GetAccessToken();
             Console.Write("Access Token: ", accessToken);
 
-            User user = new User();
-            await user.CreateUser(accessToken!);
-            Console.Write("User Created");
+            //User user = new User();
+            //await user.CreateUser(accessToken!);
+            //Console.Write("User Created");
 
- 
+            KYC kYC = new KYC();
+            await kYC.GenerateVerificationLink(accessToken!);
+
+
         }
     }
 }

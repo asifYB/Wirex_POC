@@ -21,8 +21,7 @@ namespace Wirex_POC.Services.User
 
         public async Task CreateUser(string accessToken)
         {
-            string url = "https://api-business.wirexpaychain.tech/api/v1/user";
-            var client = new HttpClient();
+            string url = "https://api-business.wirexpaychain.tech/api/v1/user"; 
             var headers = new Dictionary<string, string>
             {
                 { "Accept", "application/json" },
@@ -35,7 +34,7 @@ namespace Wirex_POC.Services.User
             {
                 email = "mohdasifreal@gmail.com",
                 country = "IN",
-                wallet_address = "0xb01E5e4659023f6d405976d7246c397bF5F06DDc" // my from address i used
+                wallet_address = "0x0f9BA9212A53eaFE964A8435b674AC17158C3E87" // my from address i used
             };
 
             var finalPayload = JsonSerializer.Serialize(requestBody, CachedJsonSerializerOptions);
