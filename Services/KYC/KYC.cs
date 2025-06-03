@@ -35,9 +35,9 @@ namespace Wirex_POC.Services.KYC
 
             url = url + "?sumsub_client_id=" + sumsub_client_id;
 
-            var response = await _apiRequest.SendPostRequestAsync<Auth0TokenResponse>(tokenUrl: url, jsonPayload: null, headers: headers);
+            var response = await _apiRequest.SendPostRequestAsync<KYCResponse>(tokenUrl: url, jsonPayload: null, headers: headers);
 
-            return response?.AccessToken!;
+            return response?.Token!;
         }
 
         public async Task<string> GenerateVerificationLink(string accessToken)
@@ -52,9 +52,9 @@ namespace Wirex_POC.Services.KYC
                 { "X-User-Email", "mohdasifreal@gmail.com" },
             };
 
-            var response = await _apiRequest.SendPostRequestAsync<Auth0TokenResponse>(tokenUrl: url, jsonPayload: null, headers: headers);
+            var response = await _apiRequest.SendPostRequestAsync<KYCResponse>(tokenUrl: url, jsonPayload: null, headers: headers);
 
-            return response?.AccessToken!;
+            return response?.RedirectUri!;
 
         }
 
@@ -70,9 +70,9 @@ namespace Wirex_POC.Services.KYC
                 { "X-User-Email", "mohdasifreal@gmail.com" },
             };
 
-            var response = await _apiRequest.SendPostRequestAsync<Auth0TokenResponse>(tokenUrl: url, jsonPayload: null, headers: headers);
+            var response = await _apiRequest.SendPostRequestAsync<KYCResponse>(tokenUrl: url, jsonPayload: null, headers: headers);
 
-            return response?.AccessToken!;
+            return response?.Token!;
 
         }
     }
