@@ -37,6 +37,10 @@ namespace Wirex_POC
             //        ]
             //}
 
+            //await Transactions.GetCardTransactions(accessToken!);
+
+            //await Rates.GetExChangeRates(accessToken!);
+
 
             ///User
             //User user = new User();
@@ -63,7 +67,14 @@ namespace Wirex_POC
 
             ///Issuance
             //await Issuance.IssuePlasticCard(accessToken!);
-            await Issuance.IssueVirtualCard(accessToken!);
+            //await Issuance.IssueVirtualCard(accessToken!);
+            //await Issuance.ActivateCard(accessToken!, "0x7B0cb32C4d716c007Ca308F7F518f20F3880F253");
+
+
+
+            ///Receipents
+            await Reciepients.CreateReciepients(accessToken!);
+            await Reciepients.GetReciepients(accessToken!);
 
 
         }
