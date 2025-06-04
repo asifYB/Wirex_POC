@@ -96,5 +96,36 @@ namespace Wirex_POC.Services.UserManagement
             var body = await response.Content.ReadAsStringAsync();
             Console.WriteLine(body);
         }
+
+        public static async Task ConfirmPhoneNumber(string accessToken, string action_token)
+        {
+            string url = "https://api-baas.wirexapp.tech/api/v1/user/phone-number/confirm";
+
+            var client = new HttpClient();
+            var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Put,
+                RequestUri = new Uri(url),
+                Headers =
+                {
+                    { "Accept", "application/json" },
+                    { "Authorization", accessToken },
+                    { "X-Chain-Id", "84532" },
+                    { "X-User-Email", "mohdasifreal@gmail.com" }
+                }
+            };
+
+            var payload = new
+            {
+                action_token
+            };
+
+            string jsonPayload = JsonSerializer.Serialize(payload);
+            request.Content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
+
+            using var response = await client.SendAsync(request);
+            var body = await response.Content.ReadAsStringAsync();
+            Console.WriteLine(body);
+        }
     }
 }
