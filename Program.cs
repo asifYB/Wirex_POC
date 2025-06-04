@@ -1,6 +1,8 @@
 
 using System.Threading.Tasks;
+using Wirex_POC.Services;
 using Wirex_POC.Services.Confirmation;
+using Wirex_POC.Services.Issuance;
 using Wirex_POC.Services.KYC;
 using Wirex_POC.Services.Shared;
 using Wirex_POC.Services.User;
@@ -18,6 +20,22 @@ namespace Wirex_POC
             GenerateToken generateToken = new GenerateToken();
             string? accessToken = await generateToken.GetAccessToken();
             Console.Write("Access Token: ", accessToken);
+
+            //await Wallet.GetWalletDeatil(accessToken!);
+            //{ "wallet_address":"0x7B0cb32C4d716c007Ca308F7F518f20F3880F253",
+            //        "wallet_name":"Main Wallet","wallet_status":"Confirmed",
+            //        "wallet_type":"Primary","balances":
+            //        [
+            //        { "token_symbol":"USDT","token_address":"0x2C6c7c00ACa9B9D8446d107367485079b0471706",
+            //            "balance":0,"reference_balance":0,"reference_currency":"USD"},
+            //        { "token_symbol":"USDC","token_address":"0x7Af7cDbd557eD302F7538Db1e3d094C8BBcA665c",
+            //            "balance":0,"reference_balance":0,"reference_currency":"USD"},
+            //        { "token_symbol":"DAI","token_address":"0xCdE9d704B40D254B2019af9f0c930cA7f896CC6A",
+            //            "balance":0,"reference_balance":0,"reference_currency":"USD"},
+            //        { "token_symbol":"EURC","token_address":"0xF70461ffb413981852683657A310892227e3989e",
+            //            "balance":0,"reference_balance":0,"reference_currency":"USD"}
+            //        ]
+            //}
 
 
             ///User
@@ -39,9 +57,13 @@ namespace Wirex_POC
 
 
             ///Confirmation
-            await Confirmation.ConfirmPhoneNumber(accessToken!);
-
+            //await Confirmation.ConfirmPhoneNumber(accessToken!);
             //await Confirmation.VerifySMSCode(accessToken!, "685418", "a9d08facaf144a6f8c40e948598c9690");
+
+
+            ///Issuance
+            //await Issuance.IssuePlasticCard(accessToken!);
+            await Issuance.IssueVirtualCard(accessToken!);
 
 
         }
