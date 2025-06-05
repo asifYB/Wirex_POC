@@ -73,9 +73,12 @@ namespace Wirex_POC
 
 
             ///Receipents
-            await Reciepients.CreateReciepients(accessToken!);
-            await Reciepients.GetReciepients(accessToken!);
-
+            //await Reciepients.CreateReciepients(accessToken!);
+            //await Reciepients.GetReciepients(accessToken!);
+            //await Reciepients.GetReciepientByCatalouge(accessToken!);
+            //await Reciepients.GetReciepientByCurrency(accessToken!);
+            //await Reciepients.GetReciepientByName(accessToken!);
+            await Reciepients.GetReciepientByType(accessToken!);
 
         }
     }
