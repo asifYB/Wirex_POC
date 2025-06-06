@@ -63,7 +63,7 @@ namespace Wirex_POC.Services.Issuance
                     { "Accept", "application/json" },
                     { "Authorization", accessToken },
                     { "X-Chain-Id", "84532" },
-                    { "X-User-Email", "mohdasifreal@gmail.com" }
+                    { "X-User-Email", "mohdasifsp21@gmail.com" }
                 }
             };
 

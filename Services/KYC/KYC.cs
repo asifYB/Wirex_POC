@@ -30,7 +30,7 @@ namespace Wirex_POC.Services.KYC
                 { "Accept", "application/json" },
                 { "Authorization",  accessToken},
                 { "X-Chain-Id", "84532" },
-                { "X-User-Email", "mohdasifreal@gmail.com" },
+                { "X-User-Email", "mohdasif2360@gmail.com" },
             };
 
             url = url + "?sumsub_client_id=" + sumsub_client_id;
@@ -49,7 +49,7 @@ namespace Wirex_POC.Services.KYC
                 { "Accept", "application/json" },
                 { "Authorization",  accessToken},
                 { "X-Chain-Id", "84532" },
-                { "X-User-Email", "mohdasifreal@gmail.com" },
+                { "X-User-Email", "mohdasif2360@gmail.com" },
             };
 
             var response = await _apiRequest.SendPostRequestAsync<KYCResponse>(tokenUrl: url, jsonPayload: null, headers: headers);
@@ -67,7 +67,7 @@ namespace Wirex_POC.Services.KYC
                 { "Accept", "application/json" },
                 { "Authorization",  accessToken},
                 { "X-Chain-Id", "84532" },
-                { "X-User-Email", "mohdasifreal@gmail.com" },
+                { "X-User-Email", "mohdasif2360@gmail.com" },
             };
 
             var response = await _apiRequest.SendPostRequestAsync<KYCResponse>(tokenUrl: url, jsonPayload: null, headers: headers);

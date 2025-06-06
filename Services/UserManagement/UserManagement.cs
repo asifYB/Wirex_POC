@@ -26,7 +26,7 @@ namespace Wirex_POC.Services.UserManagement
                     { "Accept", "application/json" },
                     { "Authorization",  accessToken},
                     { "X-Chain-Id", "84532" },
-                    { "X-User-Email", "mohdasifreal@gmail.com" }
+                    { "X-User-Email", "mohdasifsp21@gmail.com" }
                 },
             };
             using var response = await client.SendAsync(request);
@@ -82,7 +82,7 @@ namespace Wirex_POC.Services.UserManagement
                     { "Accept", "application/json" },
                     { "Authorization",  accessToken},
                     { "X-Chain-Id", "84532" },
-                    { "X-User-Email", "mohdasifreal@gmail.com" }
+                    { "X-User-Email", "mohdasifsp21@gmail.com" }
                 },
                 Content = new StringContent("{\"is_confirmed\":true,\"phone_number\":\"+917210166106\"}")
                 {
@@ -111,7 +111,7 @@ namespace Wirex_POC.Services.UserManagement
                     { "Accept", "application/json" },
                     { "Authorization", accessToken },
                     { "X-Chain-Id", "84532" },
-                    { "X-User-Email", "mohdasifreal@gmail.com" }
+                    { "X-User-Email", "mohdasifsp21@gmail.com" }
                 }
             };
 

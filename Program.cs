@@ -21,6 +21,9 @@ namespace Wirex_POC
             string? accessToken = await generateToken.GetAccessToken();
             Console.Write("Access Token: ", accessToken);
 
+
+            await ActivityFeed.GetActivityFeed(accessToken!);
+
             //await Wallet.GetWalletDeatil(accessToken!);
             //{ "wallet_address":"0x7B0cb32C4d716c007Ca308F7F518f20F3880F253",
             //        "wallet_name":"Main Wallet","wallet_status":"Confirmed",
@@ -43,26 +46,27 @@ namespace Wirex_POC
 
 
             ///User
-            //User user = new User();
+            User user = new User();
             //await user.CreateUser(accessToken!);
             //Console.Write("User Created");
 
 
             //KYC
-            //KYC kYC = new KYC();
+            KYC kYC = new KYC();
             //await kYC.GenerateVerificationLink(accessToken!);
-
+            //await kYC.GenerateVerificationToken(accessToken!);
+            //await kYC.GenerateSharingToken(accessToken!, "");
 
             ///User Management
             //await UserManagement.RetrieveUserInformation(accessToken!);
             //await UserManagement.UpdateFreshDeskId(accessToken!);
             //await UserManagement.UpdatePhoneNumber(accessToken!);
-            //await UserManagement.ConfirmPhoneNumber(accessToken!, "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijc5RDVFRTdCNTM2RjJCRDQyMEI2NDRCQkNDMjhBRDhDQjY0NUU0QUIiLCJ4NXQiOiJlZFh1ZTFOdks5UWd0a1M3ekNpdGpMWkY1S3MiLCJ0eXAiOiJKV1QifQ.eyJ1c2VySWQiOiIyMGJiMDk1MS1lYTIyLTRkZjEtYTNlMi1kMjAxODc4MDFiYWMiLCJlbWFpbCI6Im1vaGRhc2lmcmVhbEBnbWFpbC5jb20iLCJjb21wYW55SWQiOiIwMDAwMDAwMC0wMDAwLTAwMDAtMDAwMC0wMDAwMDAwMDAwMTUiLCJwdXJwb3NlIjoiVmVyaWZ5UGhvbmUiLCJjb25maXJtYXRpb25UeXBlIjoiU21zIiwibmJmIjoxNzQ5MDEwNTI1LCJleHAiOjE3NDkwMTA4MjUsImlhdCI6MTc0OTAxMDUyNX0.lMFTC25jWAFspuVerpAlPzjo4rTUgNiAXA7sQvBqCcD5ZXL6uzLP-wrzooNswRRE_SJUn4dQ6kfVqcLafEU3p-C_YxszouTIYYBJ8WAnIz-ExZCyuS7mGTk6xUtZAdJPYr7345rG5CQrG1wzpLWMMFCx2qhPU5V2JnCu4M4ZHgF860iNqlSr0o7V0SAF5Mb-Gp5C3Bj2xA7qtelCJmc74vIJl9HMaeDZIli4INZkn6jhOdZs6Z6RbLSAyanWoCldSA4AjC9W0EuTH7IPajBfMgDnWRATVoygdMYJXJRlEKqYxmtcrG7q1huTFySJmLPWyZsMBT9yWkXa8XaWQKXXZQ");
+            //await UserManagement.ConfirmPhoneNumber(accessToken!, "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijc5RDVFRTdCNTM2RjJCRDQyMEI2NDRCQkNDMjhBRDhDQjY0NUU0QUIiLCJ4NXQiOiJlZFh1ZTFOdks5UWd0a1M3ekNpdGpMWkY1S3MiLCJ0eXAiOiJKV1QifQ.eyJ1c2VySWQiOiJlYTFjZWQzMy00ZDU2LTQwOTYtOGI2OC1iM2Q2MTI0N2M1MGQiLCJlbWFpbCI6Im1vaGRhc2lmc3AyMUBnbWFpbC5jb20iLCJjb21wYW55SWQiOiIwMDAwMDAwMC0wMDAwLTAwMDAtMDAwMC0wMDAwMDAwMDAwMTUiLCJwdXJwb3NlIjoiVmVyaWZ5UGhvbmUiLCJjb25maXJtYXRpb25UeXBlIjoiU21zIiwibmJmIjoxNzQ5MTg0ODk0LCJleHAiOjE3NDkxODUxOTQsImlhdCI6MTc0OTE4NDg5NH0.RQCb7rsig4_Gx9BGnlgIZDh9UPQHUNsk0c0g37coxW5iU_MJ9jl9pSz_nt1dX5njR5PlrZ3xpsXvBAU9j-oDjoRbtbMdB13aJgDkWZAiHQxD0MgTeD2xHQJLgwzENfq-FLz-vsPj0KWj6-F9mecTI2ptG3I2DKUJvVu-ZXb7AQWrmJprLPMmtWrb4v2F4l3LSrZXuwqlUUD9QOot7muD_U4Ell0DMoTOBFZxscXxtwW_uhN0rPjeQZRG7JnX8UA-pRy6RA2kCAvGLd6DGLqihcckqEbo6WIqXtFAjlhQc2Tuf33D8p7HPHVJ7k16iTZEw4l0XA9gH1QOPFdevBW8Nw");
 
 
             ///Confirmation
             //await Confirmation.ConfirmPhoneNumber(accessToken!);
-            //await Confirmation.VerifySMSCode(accessToken!, "685418", "a9d08facaf144a6f8c40e948598c9690");
+            //await Confirmation.VerifySMSCode(accessToken!, "488527", "509791e2e45b48939586682b2f5b2481");
 
 
             ///Issuance
@@ -78,7 +82,7 @@ namespace Wirex_POC
             //await Reciepients.GetReciepientByCatalouge(accessToken!);
             //await Reciepients.GetReciepientByCurrency(accessToken!);
             //await Reciepients.GetReciepientByName(accessToken!);
-            await Reciepients.GetReciepientByType(accessToken!);
+            //await Reciepients.GetReciepientByType(accessToken!);
 
         }
     }

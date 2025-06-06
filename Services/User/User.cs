@@ -32,9 +32,9 @@ namespace Wirex_POC.Services.User
             // Request body
             var requestBody = new
             {
-                email = "mohdasifreal@gmail.com",
-                country = "IN",
-                wallet_address = "0x0f9BA9212A53eaFE964A8435b674AC17158C3E87" // my from address i used
+                email = "mohdasif2360@gmail.com",
+                country = "SG",
+                wallet_address = "0x342FC96D3B5C23981Fa9395830fC0509a4580d25" // my from address i used
             };
 
             var finalPayload = JsonSerializer.Serialize(requestBody, CachedJsonSerializerOptions);
