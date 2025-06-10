@@ -22,7 +22,10 @@ namespace Wirex_POC
             Console.Write("Access Token: ", accessToken);
 
 
-            await ActivityFeed.GetActivityFeed(accessToken!);
+            //await ActivityFeed.GetActivityFeed(accessToken!);
+            //await Bank.GetBankAccounts(accessToken!);
+
+            await Bank.EstimateBankTransferAsync(accessToken!);
 
             //await Wallet.GetWalletDeatil(accessToken!);
             //{ "wallet_address":"0x7B0cb32C4d716c007Ca308F7F518f20F3880F253",
