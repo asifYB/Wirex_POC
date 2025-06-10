@@ -12,7 +12,7 @@ namespace Wirex_POC.Services.Card
             var client = new HttpClient();
             var request = new HttpRequestMessage
             {
-                Method = HttpMethod.Put,
+                Method = HttpMethod.Get,
                 RequestUri = new Uri(url),
                 Headers =
                 {
@@ -44,7 +44,7 @@ namespace Wirex_POC.Services.Card
             var client = new HttpClient();
             var request = new HttpRequestMessage
             {
-                Method = HttpMethod.Put,
+                Method = HttpMethod.Get,
                 RequestUri = new Uri(url),
                 Headers =
                 {
@@ -76,7 +76,7 @@ namespace Wirex_POC.Services.Card
             var client = new HttpClient();
             var request = new HttpRequestMessage
             {
-                Method = HttpMethod.Put,
+                Method = HttpMethod.Get,
                 RequestUri = new Uri(url),
                 Headers =
                 {
